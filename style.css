@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #87CEEB, #B0E0FF); /* Sky blue gradasi */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* Hiasan Awan Animasi */
+.awan {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.6);
+    opacity: 0.8;
+}
+.awan::before, .awan::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+.awan1 {
+    width: 120px; height: 60px;
+    top: 15%; left: 10%;
+    animation: melayang 25s linear infinite;
+}
+.awan2 {
+    width: 150px; height: 75px;
+    top: 25%; right: 15%;
+    animation: melayang 30s linear infinite reverse;
+}
+.awan3 {
+    width: 100px; height: 50px;
+    bottom: 20%; left: 20%;
+    animation: melayang 22s linear infinite;
+}
+.awan::before { width: 60px; height: 60px; top: -20px; left: 15px; }
+.awan::after { width: 70px; height: 70px; top: -25px; right: 15px; }
+
+@keyframes melayang {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* Kartu Ucapan */
+.kartu {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 35px 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 100, 180, 0.25);
+    border: 3px solid #B0E0FF;
+    max-width: 520px;
+    z-index: 2;
+}
+
+.kartu h1 {
+    color: #4682B4;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.kartu h2 {
+    color: #1E90FF;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.umur {
+    font-size: 1.3rem;
+    color: #5F9EA0;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.pesan {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #336699;
+}
+
+audio {
+    margin-top: 25px;
+    z-index: 2;
+    border-radius: 30px;
+    background: white;
+}
